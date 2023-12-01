@@ -1,5 +1,6 @@
 import { Button } from '@mui/material';
 import Head from 'next/head';
+import { Hero } from 'src/components';
 import Layout from 'src/layout/layout';
 
 const IndexPage = () => {
@@ -8,7 +9,7 @@ const IndexPage = () => {
       {/* <Head>
         <title>Home page</title>
       </Head> */}
-      <Button>Home</Button>
+      <Hero/>
     </Layout>
   );
 };

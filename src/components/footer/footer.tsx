@@ -7,7 +7,7 @@ import { format } from "date-fns"
 
 const Footer = () => {
   return (
-    <Box padding={'20px'} sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'primary.main', color: 'white'}}>
+    <Box padding={'20px'} sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#141414', color: 'white'}}>
      
      <Typography>© {format(new Date(), 'yyyy')} Yahyo. All rights reserved</Typography>
      <ButtonGroup disableElevation variant='contained' aria-label='Disabled elevation buttons' sx={{display:'flex', gap:'15px'}}>
