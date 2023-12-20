@@ -71,7 +71,7 @@ const data = [
     exerpt:
       "Get started with your SEO implementation when using a Headless CMS",
     author: {
-      name: "Samar Badriddinov",
+      name: "Latifov Muhammad Yahyo",
       image: "https://media.graphassets.com/DkfNqQNGRz2F4UFntKQx",
     },
   },
@@ -81,7 +81,7 @@ const data = [
     exerpt:
       "Learn more about Polymorphic Relations and Sortable Relations with Hygraph",
     author: {
-      name: "Samar Badriddinov",
+      name: "Latifov Muhammad Yahyo",
       image: "https://media.graphassets.com/DkfNqQNGRz2F4UFntKQx",
     },
   },

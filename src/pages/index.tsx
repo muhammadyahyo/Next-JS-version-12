@@ -1,6 +1,6 @@
-import { Button } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import Head from 'next/head';
-import { Hero } from 'src/components';
+import { Content, Hero, Sidebar } from 'src/components';
 import Layout from 'src/layout/layout';
 
 const IndexPage = () => {
@@ -10,6 +10,10 @@ const IndexPage = () => {
         <title>Home page</title>
       </Head> */}
       <Hero/>
+      <Box sx={{ display:'flex', gap:20 , padding:'20px', backgroundColor: '#0a0a0a',color:'white'}}>
+        <Sidebar/>
+        <Content/>
+      </Box>
     </Layout>
   );
 };
