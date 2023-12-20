@@ -8,7 +8,7 @@ import { navItems } from 'src/config/constants'
 const Sidebar = () => {
   return (
     <>
-    <Box width={'40%'} sx={{position: 'sticky', top: '100px'}}>
+    <Box width={'35%'} sx={{position: 'sticky', top: '100px'}}>
       <Box position={'sticky'} top={'100px'} sx={{transition: 'all 0.3s ease'}}>
         <Box padding={'20px'} border={'1px solid gray'} borderRadius={'8px'} >
         <Typography variant='h5'>
