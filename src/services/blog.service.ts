@@ -25,6 +25,9 @@ export const BlogsService = {
                 label
                 slug
               }
+              description{
+                text
+              }
             }
           }
           
@@ -51,6 +54,9 @@ export const BlogsService = {
                 }
                 image {
                     url
+                }
+                description{
+                  text
                 }
                 }
             }
