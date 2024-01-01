@@ -2,11 +2,13 @@ import { Avatar, Box, Button, Typography } from '@mui/material'
 import Divider from '@mui/material/Divider';
 import { format } from 'date-fns'
 import Image from 'next/image'
+import { useRouter } from 'next/router';
 import React, { Fragment } from 'react'
 import { navItems } from 'src/config/constants'
 import { SidebarProps } from './sidebar.props';
 
 const Sidebar = ({latestBlogs, categories}: SidebarProps) => {
+  const router = useRouter()
   return (
     <>
     <Box width={{xs: '100%', md: '30%'}} sx={{position: 'sticky', top: '100px'}}>
@@ -32,8 +34,8 @@ const Sidebar = ({latestBlogs, categories}: SidebarProps) => {
         <Box sx={{display:'flex', flexDirection: 'column', marginTop: '20px'}}>
           {
             latestBlogs.map(item => (
-              <Fragment key={item.title}>
-                <Box sx={{display: 'flex',gap: '20px', alignItems: 'center'}}>
+              <Box onClick={()=>router.push(`/blog/${item.slug}`)} sx={{cursor: 'pointer'}} key={item.title}>
+                <Box  sx={{display: 'flex',gap: '20px', alignItems: 'center'}}>
                   <Image src={item.image.url} alt={item.title} width={100} height={100}  style={{objectFit: 'cover', borderRadius: '8px'}}/>
                   <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
                     <Typography variant='body1'>{item.title}</Typography>
@@ -49,7 +51,7 @@ const Sidebar = ({latestBlogs, categories}: SidebarProps) => {
                   </Box>
                 </Box>
                 <Divider light orientation="horizontal"  variant='fullWidth' sx={{marginTop:'20px'}}/>
-              </Fragment>
+              </Box>
             ))
           }
         </Box>
