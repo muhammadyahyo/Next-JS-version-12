@@ -4,11 +4,12 @@ import { format } from 'date-fns'
 import Image from 'next/image'
 import React, { Fragment } from 'react'
 import { navItems } from 'src/config/constants'
+import { SidebarProps } from './sidebar.props';
 
-const Sidebar = () => {
+const Sidebar = ({latestBlogs, categories}: SidebarProps) => {
   return (
     <>
-    <Box width={'35%'} sx={{position: 'sticky', top: '100px'}}>
+    <Box width={{xs: '100%', md: '30%'}} sx={{position: 'sticky', top: '100px'}}>
       <Box position={'sticky'} top={'100px'} sx={{transition: 'all 0.3s ease'}}>
         <Box padding={'20px'} border={'1px solid gray'} borderRadius={'8px'} >
         <Typography variant='h5'>
@@ -16,8 +17,8 @@ const Sidebar = () => {
         </Typography>
         <Box sx={{display:'flex', flexDirection: 'column', marginTop: '20px'}}>
           {
-            navItems.map(nav => (
-              <Fragment key={nav.route}>
+            categories.map(nav => (
+              <Fragment key={nav.slug}>
                 <Button fullWidth  sx={{justifyContent: 'flex-start', height: '50px'}}>{nav.label}</Button>
                 <Divider/>
               </Fragment>
@@ -30,14 +31,14 @@ const Sidebar = () => {
         <Typography variant='h5'>Latest blog</Typography>
         <Box sx={{display:'flex', flexDirection: 'column', marginTop: '20px'}}>
           {
-            data.map(item => (
+            latestBlogs.map(item => (
               <Fragment key={item.title}>
                 <Box sx={{display: 'flex',gap: '20px', alignItems: 'center'}}>
-                  <Image src={item.image} alt={item.title} width={100} height={100}  style={{objectFit: 'cover', borderRadius: '8px'}}/>
+                  <Image src={item.image.url} alt={item.title} width={100} height={100}  style={{objectFit: 'cover', borderRadius: '8px'}}/>
                   <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
                     <Typography variant='body1'>{item.title}</Typography>
                     <Box sx={{display: 'flex', gap: '10px'}}>
-                    <Avatar alt={item.author.name} src={item.author.image}/>
+                    <Avatar alt={item.author.name} src={item.author.avatar.url}/>
                     <Box>
                         <Typography variant={'body2'}>{item.author.name}</Typography>
                         <Box sx={{opacity:'0.6'}}> 
@@ -77,7 +78,7 @@ const data = [
     },
   },
   {
-    image: "https://media.graphassets.com/MxJZhmooRRuudoErkQ38",
+    image: "https://media.graphassets.com/bh3K2NNtTHCN260Xfq9h",
     title: "Union Types and Sortable Relations with Hygraph",
     exerpt:
       "Learn more about Polymorphic Relations and Sortable Relations with Hygraph",

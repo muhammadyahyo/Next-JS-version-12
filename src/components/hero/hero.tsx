@@ -37,13 +37,13 @@ const Hero = () => {
                 sx={{
                   top: "50%",
                   transform: "translateY(-50%)",
-                  paddingLeft: "50px",
+                  paddingLeft: {xs: '10px', md: '50px'},
                 }}
                 zIndex={999}
-                width={{xs: '100%', sm: '70%'}}
+                width={{xs: '100%', md: '70%'}}
               >
-                <Typography variant={"h2"}>{item.title}</Typography>
-                <Typography variant={"h5"}>{item.exerpt}</Typography>
+                <Typography sx={{fontSize: {xs: '30px', md: '50px'}}}>{item.title}</Typography>
+                <Typography color={'gray'} sx={{fontSize: {xs: '20px', md: '25px'}}}>{item.exerpt}</Typography>
                 <Box sx={{display: 'flex', gap: '10px', marginTop: '20px'}}>
                     <Avatar alt={item.author.name} src={item.author.image}/>
                     <Box>
@@ -76,7 +76,7 @@ const data = [
     },
   },
   {
-    image: "https://media.graphassets.com/MxJZhmooRRuudoErkQ38",
+    image: "https://media.graphassets.com/bh3K2NNtTHCN260Xfq9h",
     title: "Union Types and Sortable Relations with Hygraph",
     exerpt:
       "Learn more about Polymorphic Relations and Sortable Relations with Hygraph",
