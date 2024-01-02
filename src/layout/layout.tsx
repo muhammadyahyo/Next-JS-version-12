@@ -6,7 +6,7 @@ import { LayoutProps } from './layout.props'
 const Layout = ({children}: LayoutProps): JSX.Element => {
   return <>
       <Navbar/>
-      <Box minHeight={'90vh'}>
+      <Box minHeight={'90vh'} display={'flex'} flexDirection={'column'} sx={{backgroundColor: '#121113' }}>
         {children}
       </Box>
       <Footer/>
