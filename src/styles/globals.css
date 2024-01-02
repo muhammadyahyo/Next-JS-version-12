@@ -2,3 +2,8 @@ body , *{
     /* background-color: #121113; */
     color: #ffffff; 
 }
+#nprogress .bar {
+    /* height: 4px !important;
+    background-color: red !important; */
+    z-index: 1110 !important;
+}
